@@ -13,4 +13,4 @@ RUN yes | pacman -Syyu && \
   yes '' | sudo -u builder sh -c "cd /opt/builder/paru && makepkg -sir" && \
   rm -rf /opt/builder/* && \
   yes | pacman -Rs base-devel && \
-  sed -i 's/\[options\]/&\nSkipReview\nRemoveMake\nCleanAfter/' /etc/paru.conf
+  sed -i 's/\[options\]/&\nSkipReview\nRemoveMake\nCleanAfter\nLimit = 1/' /etc/paru.conf
