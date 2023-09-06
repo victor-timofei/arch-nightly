@@ -35,4 +35,4 @@ jobs:
           context: .
           file: base/Containerfile
           push: true
-          tags: ghcr.io/victor-timofei/arch-nightly:base
+          tags: ghcr.io/victor-timofei/arch-nightly:latest
