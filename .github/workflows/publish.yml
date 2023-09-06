@@ -2,7 +2,7 @@ name: Arch Linux Nightly publish
 
 on:
   push:
-    branches: ['release']
+    branches: ['main']
 
 env:
   REGISTRY: ghcr.io
