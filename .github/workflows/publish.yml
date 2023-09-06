@@ -1,8 +1,8 @@
 name: Arch Linux Nightly publish
 
 on:
-  push:
-    branches: ['main']
+  schedule:
+    - cron: "0 0 * * *"
 
 env:
   REGISTRY: ghcr.io
@@ -14,10 +14,11 @@ jobs:
     permissions:
       contents: read
       packages: write
-      # 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: "latest"
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
@@ -35,4 +36,4 @@ jobs:
           context: .
           file: Containerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/victor-timofei/arch-nightly:latest
