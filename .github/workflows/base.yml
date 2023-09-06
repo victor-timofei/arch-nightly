@@ -1,4 +1,4 @@
-name: Arch Linux Nightly publish
+name: Arch Linux Base publish
 
 on:
   workflow_dispatch: {}
