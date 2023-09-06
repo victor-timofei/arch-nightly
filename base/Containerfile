@@ -4,7 +4,7 @@ RUN yes | pacman -Syyu && \
 
   # Prepare user that will build AUR packages
   useradd -u 99 -m -d /opt/builder builder && \
-  pacman -S sudo && \
+  yes | pacman -S sudo && \
   echo "builder ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers && \
 
   # Prepare paru
