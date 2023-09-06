@@ -1,0 +1,3 @@
+FROM ghcr.io/victor-timofei/arch-nightly:base
+
+RUN yes | sudo -u builder paru -Syyu
