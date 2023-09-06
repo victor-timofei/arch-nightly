@@ -25,6 +25,13 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Find podman
-        run: which podman
+      - name: Build Image
+        run: podman build --squash-all -t ghcr.io/victor-timofei/arch-nightly:latest -f nightly/Containerfile .
+      - name: Push To quay.io
+        id: push-to-quay
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: arch-nightly
+          tags: latest
+          registry: ghcr.io/victor-timofei
 
