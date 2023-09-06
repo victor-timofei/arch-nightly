@@ -35,4 +35,4 @@ jobs:
           context: .
           file: Containerfile
           push: true
-          tags: arch:nightly
+          tags: ${{ steps.meta.outputs.tags }}
