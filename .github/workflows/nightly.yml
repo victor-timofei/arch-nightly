@@ -2,7 +2,8 @@ name: Arch Linux Nightly publish
 
 on:
   workflow_dispatch: {}
-
+  schedule:
+    - cron: "0 0 * * *"
 
 env:
   REGISTRY: ghcr.io
